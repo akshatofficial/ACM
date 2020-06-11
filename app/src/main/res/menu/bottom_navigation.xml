@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/navigation_about"
+        android:icon="@drawable/ic_baseline_about_24"
+        android:title="About" />
+
+    <item
+        android:id="@+id/navigation_event"
+        android:icon="@drawable/ic_baseline_event_note_24"
+        android:title="Events" />
+
+    <item
+        android:id="@+id/navigation_team"
+        android:icon="@drawable/ic_baseline_team_24"
+        android:title="Team" />
+
+    <item
+        android:id="@+id/navigation_contact_us"
+        android:icon="@drawable/ic_baseline_contact_us_24"
+        android:title="Contact Us" />
+
+
+</menu>
