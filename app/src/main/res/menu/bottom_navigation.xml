@@ -6,15 +6,14 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/navigation_about"
-        android:icon="@drawable/ic_baseline_about_24"
-        android:title="About" />
-
-    <item
         android:id="@+id/navigation_event"
         android:icon="@drawable/ic_baseline_event_note_24"
         android:title="Events" />
 
+   <item
+       android:id="@+id/navigation_sponcors"
+       android:icon="@drawable/ic_baseline_about_24"
+       android:title="Sponsors"/>
     <item
         android:id="@+id/navigation_team"
         android:icon="@drawable/ic_baseline_team_24"

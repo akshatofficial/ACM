@@ -1,15 +1,239 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_above="@+id/bottom_navigation"
+    android:id="@+id/scrollViewEvent"
+    android:scrollbars="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="@android:color/holo_blue_dark">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Events"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textSize="40sp"/>
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/hourOfCode"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="200dp"
+                    android:src="@drawable/hourofcode"/>
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:paddingLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hour of Code"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-condensed"/>
+                <TextView
+                    android:textStyle="italic"
+                    android:fontFamily="sans-serif-condensed"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hour of Code is a global event that has
+served over 100 Millions students in more than 100 countries to create our awareness
+among student in the diverse field of computing. Hour-of-code was organised by ACM
+as a part of a global movement during thr Computer Science week.\nWith over
+523 attendees, it was successful in training their problem-solving skills
+and logical thinking.">
+                </TextView>
+            </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/buildABit"
+            android:layout_below="@+id/hourOfCode"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <TextView
+                        android:paddingLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Build A Bit"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:fontFamily="sans-serif-condensed"/>
+                    <TextView
+                        android:textStyle="italic"
+                        android:fontFamily="sans-serif-condensed"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ACM is here with it's most awaited event Build-A-Bit.
+\nIt is a hackathon that welcomed multinationals from the IT sector who provided
+problem statements to be solved by the participants.\nIt also provided participants
+with an opportunity to come up with their own problem statements and work upon it
+to a build up cool products.\nThe hackathon was a stepping stones towards once
+dream job, especially for the freshmen.\nBeing able to impress with their skills,
+ winners got the chance to land up with an opportunity to pursue and internship
+ under the major IT giants.">
+                    </TextView>
+                </LinearLayout>
+                </ScrollView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="200dp"
+                    android:src="@drawable/screenshot"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/powerPuffCoders"
+            android:layout_below="@+id/buildABit"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="200dp"
+                    android:src="@drawable/girlcoder"/>
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:paddingLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PowerPuff Coders"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:fontFamily="sans-serif-condensed"/>
+                        <TextView
+                            android:textStyle="italic"
+                            android:fontFamily="sans-serif-condensed"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="One of the Biggest conversations that are rife
+in cyberspace is about a ratio of women in tech. To encourage more girls to get
+into coding and to eradicate and old-fashioned viewpoints. We brought PowerPuff
+ Coders, a coding contest exclusively for girls. It aimed at boosting female
+ participation and celebrating their ecstatic spirit of coding. The contest had
+earlier attracted quite a few eyeballs and had received accolades from the
+ corporate juggernaut, Goldman sachs, who lauded the execution execution of the event
+and expressed intentions to partner up with ACM.\nSo, all the girls, explore the
+coding self of yours, exhibit your remarkable skills and participate in this event
+to compete among yourselves.">
+                        </TextView>
+                    </LinearLayout>
+                </ScrollView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/googol"
+            android:layout_below="@+id/powerPuffCoders"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <ScrollView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:scrollbars="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:paddingLeft="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Googol"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:fontFamily="sans-serif-condensed"/>
+                        <TextView
+                            android:textStyle="italic"
+                            android:fontFamily="sans-serif-condensed"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="ACM is here with it's most awaited event Build-A-Bit.
+\nIt is a hackathon that welcomed multinationals from the IT sector who provided
+problem statements to be solved by the participants.\nIt also provided participants
+with an opportunity to come up with their own problem statements and work upon it
+to a build up cool products.\nThe hackathon was a stepping stones towards once
+dream job, especially for the freshmen.\nBeing able to impress with their skills,
+ winners got the chance to land up with an opportunity to pursue and internship
+ under the major IT giants.">
+                        </TextView>
+                    </LinearLayout>
+                </ScrollView>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="200dp"
+                    android:src="@drawable/screenshot"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,15 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_above="@+id/bottom_navigation"
+    android:id="@+id/scrollView"
+    android:scrollbars="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="@android:color/holo_blue_dark">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Home"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:textSize="40sp"/>
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="match_parent"
+            android:layout_height="262dp"
+            android:src="@drawable/youtube"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView1"
+            android:layout_below="@+id/image1"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="5dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/about"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About Institution"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="2dp"/>
+                <TextView
+                    android:padding="5dp"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="italic"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/about"
+                    android:text="IIT(ISM) is one of the oldest institution in India established
+in year 1926. It was established on the line of Royal School of Mines-London under the name
+Indian School of Mines located in Dhanbad, Coal Capital of India.\n\nIndian School of Mines started
+started by offering Mining Engineering. Applied Geology, Applied Physics, Applied Chemistry
+Applied Mathematics and gradually started offering core courses of Computer Science, Electrical,
+Electronics etc expanding from Earth Science to technical side.\n\nLater in year 2016, Indian
+School of Mines is awarded the tag of an IIT and renamed as Indian Institute of Technology
+(Indian School of Mines) Dhanbad.\n\nWith a clear intent of the institution to improve the
+amount of research an d projects in the Institution. It has invested most of it's resources
+dedicated to projects and research"
+
+                    />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_below="@+id/cardView1"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="5dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/aboutACM"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="About ACM"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="2dp"/>
+                <TextView
+                    android:padding="5dp"
+                    android:textSize="18sp"
+                    android:textStyle="italic"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@+id/aboutACM"
+                    android:text="IIT(ISM) Dhanbad ACM student chapter was established in 2011
+under th aegis of Department of Computer Science and Engineering IIT(ISM) Dhanbad.\n\nThe chapter
+aims at serving as a dynamic hub of activities for the computing fraternity of IIT(ISM) Dhanbad
+, where enthusiasts meet, interact and learn from each other.\n\n
+The chapter organizes various events which includes hackathons, technical workshops, talks by
+renowned speakers and coding competitions catering to 1500+ enthusiasts.\n\nWith over 1400 paid
+members, our chapter is one of the biggest student chapters in India."/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

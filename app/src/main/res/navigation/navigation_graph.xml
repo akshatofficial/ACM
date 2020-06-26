@@ -10,11 +10,7 @@
         android:name="com.example.acm.navigation_home"
         android:label="Home"
         tools:layout="@layout/fragment_navigation_home" />
-    <fragment
-        android:id="@+id/navigation_about"
-        android:name="com.example.acm.navigation_about"
-        android:label="About"
-        tools:layout="@layout/fragment_navigation_about" />
+
     <fragment
         android:id="@+id/navigation_team"
         android:name="com.example.acm.navigation_team"
@@ -30,4 +26,9 @@
         android:name="com.example.acm.navigation_event"
         android:label="Events"
         tools:layout="@layout/fragment_navigation_event" />
+    <fragment
+        android:id="@+id/navigation_sponcors"
+        android:name="com.example.acm.navigation_sponcors"
+        android:label="Sponcors"
+        tools:layout="@layout/fragment_navigation_sponcors" />
 </navigation>
