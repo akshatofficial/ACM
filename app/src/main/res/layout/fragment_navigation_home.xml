@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_above="@+id/bottom_navigation"
+    android:id="@+id/scrollView"
+    android:scrollbars="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    >
+
+    <View
+        android:id="@+id/anc_view"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:elevation="8dp"
+        android:background="@drawable/toolbar_background"/>
+
+    <LinearLayout
+        android:id="@+id/menuLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:baselineAligned="false"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        app:layout_anchor="@id/anc_view"
+        app:layout_anchorGravity="bottom">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_achievements"
+                android:backgroundTint="#fff"
+                android:src="@drawable/ic_baseline_achivements_24"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="10dp"
+                app:borderWidth="0dp"
+                app:fabCustomSize="72dp"
+                app:maxImageSize="36dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_events"
+                android:backgroundTint="#fff"
+                android:src="@drawable/ic_baseline_event_note_24"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="10dp"
+                app:borderWidth="0dp"
+                app:fabCustomSize="72dp"
+                app:maxImageSize="36dp"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_team"
+                android:backgroundTint="#fff"
+                android:src="@drawable/ic_baseline_team_24"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_margin="10dp"
+                app:borderWidth="0dp"
+                app:fabCustomSize="72dp"
+                app:maxImageSize="36dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCarousel"
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginBottom="7dp"
+            app:cardElevation="7dp"
+            app:cardCornerRadius="5dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recent Events organised by our ACM club."
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:padding="5dp"/>
+                <com.synnapps.carouselview.CarouselView
+                    android:layout_margin="5dp"
+                    android:layout_below="@+id/title1"
+                    android:id="@+id/carouselView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:fillColor="#FFFFFFFF"
+                    app:pageColor="#00000000"
+                    app:radius="6dp"
+                    app:slideInterval="3000"
+                    app:strokeColor="#FF777777"
+                    app:strokeWidth="1dp"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_below="@id/cardCarousel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            app:cardElevation="7dp"
+            app:cardCornerRadius="5dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/title3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Some recent achievements."
+                    android:fontFamily="sans-serif-condensed"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:padding="5dp"/>
+                <LinearLayout
+                    android:padding="7dp"
+                    android:id="@+id/layoutAchive"
+                    android:layout_below="@+id/title3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/title4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="1.Teams qualified for  ICPC Asia-West Continent Final:-\n
+\n a) Team Astralix \n
+b) Team One_Last_Time"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:padding="5dp"/>
+                    <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/title5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="2. Some of the Teams qualified for ICPC Regionals \n\n
+ a) Skullcandy:(Kanpur, Amritapuri)\n
+ b) Mushroom Boys:(Amritapuri)"
+                        android:fontFamily="sans-serif-condensed"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:padding="5dp"/>
+                </LinearLayout>
+                <TextView
+                    android:padding="7dp"
+                    android:layout_below="@+id/layoutAchive"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Students selected for Google Summer of Code (GSoC) -2020 from IIT (ISM) Dhanbad:\n
+1. Abhinav Bajpai (DD CSE)
+  2. Naveen Jain (CSE)\n
+3. Rishabh Agarwal ( M&amp;C)
+  4. Dhrubojyoti Biswas (M&amp;C)\n
+5. Rahul Katiyar (M.Tech CSE)"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="#000000"/>
+
+            </RelativeLayout>
+            
+        </androidx.cardview.widget.CardView>
+
+
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
