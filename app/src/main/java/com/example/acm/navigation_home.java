@@ -1,6 +1,7 @@
 package com.example.acm;
 
 import android.content.Intent;
+import android.graphics.Paint;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.synnapps.carouselview.CarouselView;
@@ -23,7 +25,7 @@ public class navigation_home extends Fragment implements View.OnClickListener {
 
 
     CarouselView carouselView;
-
+    TextView aboutAcmHeader, titleRecentAchieve, titleRecentEvents;
     int[] sampleImages = {R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4};
     NavController navController;
     @Nullable
@@ -37,7 +39,12 @@ public class navigation_home extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        aboutAcmHeader = view.findViewById(R.id.aboutACMHeader);
+        titleRecentAchieve = view.findViewById(R.id.title3);
+        titleRecentEvents = view.findViewById(R.id.title1);
+        aboutAcmHeader.setPaintFlags(aboutAcmHeader.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        titleRecentAchieve.setPaintFlags(titleRecentAchieve.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        titleRecentEvents.setPaintFlags(titleRecentEvents.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         navController= Navigation.findNavController(view);
         view.findViewById(R.id.fab_achievements).setOnClickListener(this);
         view.findViewById(R.id.fab_events).setOnClickListener(this);

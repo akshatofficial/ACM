@@ -4,35 +4,40 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
     private ViewPager viewPager;
     private LinearLayout linearLayout;
-    private com.example.onboard.SlideAdaptor slideAdaptor;
+    private com.example.acm.SlideAdaptor slideAdaptor;
 
     private TextView[] mDots;
 
     private Button next, prev;
     private int mCurrentButton;
+    private RelativeLayout relativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        //checkFirstOpen();
         viewPager = (ViewPager)findViewById(R.id.slideViewPager);
-        linearLayout = (LinearLayout)findViewById(R.id.dotsView);
-
+        //linearLayout = (LinearLayout)findViewById(R.id.dotsView);
+        relativeLayout = findViewById(R.id.relativeLayoutOnBoard);
         next = (Button)findViewById(R.id.next_button);
+        next.setBackgroundColor(Color.rgb(247, 131, 131));
         prev = (Button)findViewById(R.id.previous_button);
-        slideAdaptor = new com.example.onboard.SlideAdaptor(this);
+        slideAdaptor = new com.example.acm.SlideAdaptor(this);
         viewPager.setAdapter(slideAdaptor);
-        addDotsIndicator(0);
+        //addDotsIndicator(0);
 
         viewPager.addOnPageChangeListener(viewListener);
 
@@ -51,7 +56,8 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
 
-    public void addDotsIndicator(int position){
+
+/*public void addDotsIndicator(int position){
         mDots = new TextView[4];
         linearLayout.removeAllViews();
         for(int i = 0;i < mDots.length;i++){
@@ -64,7 +70,7 @@ public class MainActivity2 extends AppCompatActivity {
         if(mDots.length > 0){
             mDots[position].setTextColor(getResources().getColor(R.color.colorChange));
         }
-    }
+    }*/
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
         @Override
@@ -74,24 +80,45 @@ public class MainActivity2 extends AppCompatActivity {
 
         @Override
         public void onPageSelected(int position) {
-            addDotsIndicator(position);
+           //addDotsIndicator(position);
 
             mCurrentButton = position;
+            if(position == 0){
+                relativeLayout.setBackgroundColor(Color.rgb(247, 131, 131));
+                next.setBackgroundColor(Color.rgb(247, 131, 131));
+                prev.setBackgroundColor(Color.rgb(247, 131, 131));
+            }else if(position == 1){
+                relativeLayout.setBackgroundColor(Color.parseColor("#A8E6CF"));
+                next.setBackgroundColor(Color.parseColor("#A8E6CF"));
+                prev.setBackgroundColor(Color.parseColor("#A8E6CF"));
+            }else if(position == 2){
+                relativeLayout.setBackgroundColor(Color.parseColor("#84A9AC"));
+                next.setBackgroundColor(Color.parseColor("#84A9AC"));
+                prev.setBackgroundColor(Color.parseColor("#84A9AC"));
+            }else if(position == 3){
+                relativeLayout.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                next.setBackgroundColor(Color.parseColor("#B2EBF2"));
+                prev.setBackgroundColor(Color.parseColor("#B2EBF2"));
+            }
 
             if(position == 0){
+                //next.setVisibility(View.INVISIBLE);
                 prev.setVisibility(View.INVISIBLE);
                 prev.setEnabled(false);
                 next.setEnabled(true);
                 next.setText("Next");
-            }else if(position == mDots.length - 1){
+            }else if(position == 3){
                 prev.setEnabled(true);
                 next.setEnabled(true);
                 next.setText("Finish");
+                //next.setVisibility(View.INVISIBLE);
                 prev.setVisibility(View.VISIBLE);
                 next.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(MainActivity2.this, LoginActivity.class));
+                        Intent intent = new Intent(MainActivity2.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }else{

@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_above="@+id/bottom_navigation"
     android:id="@+id/scrollView"
-    android:scrollbars="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f2f2f2"
-    >
+    android:scrollbars="vertical"
+    android:background="#f2f2f2">
 
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:layout_above="@+id/bottom_navigation"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f2f2f2"
+        >
     <View
         android:id="@+id/anc_view"
         android:layout_width="match_parent"
@@ -87,15 +95,52 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardCarousel"
-            android:layout_marginTop="100dp"
+            android:id="@+id/aboutCard"
             android:layout_width="match_parent"
-            android:layout_height="255dp"
-            android:layout_marginRight="7dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
             android:layout_marginLeft="7dp"
             android:layout_marginBottom="7dp"
+            android:layout_marginRight="7dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="7dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/aboutACMHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="About ACM"
+                android:textColor="#000000"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="2dp"/>
+            <TextView
+                android:layout_below="@+id/aboutACMHeader"
+                android:padding="7dp"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="18sp"
+                android:textColor="#000000"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="IIT(ISM) Dhanbad ACM student chapter was established in 2011
+under th aegis of Department of Computer Science and Engineering IIT(ISM) Dhanbad.\n\nThe chapter
+aims at serving as a dynamic hub of activities for the computing fraternity of IIT(ISM) Dhanbad
+, where enthusiasts meet, interact and learn from each other"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_below="@+id/aboutCard"
+            android:id="@+id/cardCarousel"
+
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            android:layout_margin="7dp"
             app:cardElevation="7dp"
             app:cardCornerRadius="5dp">
             <RelativeLayout
@@ -105,10 +150,12 @@
                     android:id="@+id/title1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Recent Events organised by our ACM club."
+                    android:text="Recent Events organised by our ACM club"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="#000000"
                     android:fontFamily="sans-serif-condensed"
                     android:textStyle="bold"
-                    android:textSize="22dp"
+                    android:textSize="20dp"
                     android:padding="5dp"/>
                 <com.synnapps.carouselview.CarouselView
                     android:layout_margin="5dp"
@@ -138,10 +185,12 @@
                     android:id="@+id/title3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Some recent achievements."
+                    android:text="Some recent achievements"
+                    android:textColor="#000000"
                     android:fontFamily="sans-serif-condensed"
                     android:textStyle="bold"
-                    android:textSize="22dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="22sp"
                     android:padding="5dp"/>
                 <LinearLayout
                     android:padding="7dp"
@@ -159,8 +208,8 @@
 \n a) Team Astralix \n
 b) Team One_Last_Time"
                         android:fontFamily="sans-serif-condensed"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
                         android:padding="5dp"/>
                     <TextView
                         android:layout_weight="1"
@@ -170,9 +219,9 @@ b) Team One_Last_Time"
                         android:text="2. Some of the Teams qualified for ICPC Regionals \n\n
  a) Skullcandy:(Kanpur, Amritapuri)\n
  b) Mushroom Boys:(Amritapuri)"
+                        android:textColor="#000000"
                         android:fontFamily="sans-serif-condensed"
-                        android:textStyle="bold"
-                        android:textSize="18dp"
+                        android:textSize="18sp"
                         android:padding="5dp"/>
                 </LinearLayout>
                 <TextView
@@ -181,10 +230,10 @@ b) Team One_Last_Time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Students selected for Google Summer of Code (GSoC) -2020 from IIT (ISM) Dhanbad:\n
-1. Abhinav Bajpai (DD CSE)
-  2. Naveen Jain (CSE)\n
-3. Rishabh Agarwal ( M&amp;C)
-  4. Dhrubojyoti Biswas (M&amp;C)\n
+1. Abhinav Bajpai (DD CSE)\n
+2. Naveen Jain (CSE)\n
+3. Rishabh Agarwal ( M&amp;C)\n
+4. Dhrubojyoti Biswas (M&amp;C)\n
 5. Rahul Katiyar (M.Tech CSE)"
                     android:textSize="18sp"
                     android:fontFamily="sans-serif-condensed"
@@ -197,4 +246,6 @@ b) Team One_Last_Time"
 
 
     </RelativeLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</ScrollView>

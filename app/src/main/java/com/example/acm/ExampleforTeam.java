@@ -5,10 +5,11 @@ public class ExampleforTeam {
     private String mName;
     private String mPosition;
 
-    ExampleforTeam(int photo, String name, String position){
+    ExampleforTeam(int photo, String name, String position) {
         mPhoto = photo;
         mName = name;
         mPosition = position;
+
     }
 
     public int getmPhoto() {
@@ -22,4 +23,6 @@ public class ExampleforTeam {
     public String getmPosition() {
         return mPosition;
     }
+
+
 }

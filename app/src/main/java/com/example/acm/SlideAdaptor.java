@@ -1,4 +1,4 @@
-package com.example.onboard;
+package com.example.acm;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -22,28 +22,15 @@ public class SlideAdaptor extends PagerAdapter {
     }
 
     public int slideImages[] = {
-            R.drawable.events_logo,
-            R.drawable.spo,
-            R.drawable.team_logo,
-            R.drawable.contact_us_logo
+            R.drawable.onboardevents,
+            R.drawable.onboardsponsor,
+            R.drawable.onboardteam,
+            R.drawable.onboardcontact,
     };
 
-    public String slide_heading[] = {
-            "Events",
-            "Sponsors",
-            "Team",
-            "Contact Us"
-    };
-
-    public String slide_descriptions[] = {
-            "Here you will get to know about all events organised by the ACM club of IIT(ISM) Dhanbad.",
-            "Here you will get to know about the sponsors who supports a lot in making our events successful",
-            "Here you will get to know about the main reason of success of the ACM club, the TEAM",
-            "Wanna contact us? We will be always here to help you!"
-    };
     @Override
     public int getCount() {
-        return slide_heading.length;
+        return slideImages.length;
     }
 
     @Override
@@ -58,12 +45,10 @@ public class SlideAdaptor extends PagerAdapter {
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
 
         ImageView slideImageView = (ImageView) view.findViewById(R.id.slideViewImage);
-        TextView slideHeading = (TextView) view.findViewById(R.id.tag);
-        TextView slideDescription = (TextView) view.findViewById(R.id.slideDescription);
+        
 
         slideImageView.setImageResource(slideImages[position]);
-        slideHeading.setText(slide_heading[position]);
-        slideDescription.setText(slide_descriptions[position]);
+
 
         container.addView(view);
         return view;

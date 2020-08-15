@@ -19,6 +19,7 @@ public class ExampleTeamAdapter extends RecyclerView.Adapter<ExampleTeamAdapter.
         public TextView textName;
         public TextView positionName;
 
+
         public ExampleTeamViewHolder(@NonNull View itemView) {
             super(itemView);
             mImageView = (ImageView)itemView.findViewById(R.id.photo);
